@@ -71,27 +71,6 @@ let {
         )
         .catch((err) => res.send(err));
     },
-    updateCart: async (req, res) => {
-      try {
-        const cart_id = String(req.params.id);
-        const { product_id } = req.body;
-        const { rowCount } = await findId(cart_id);
-        if (!rowCount) {
-          res.json({ message: "ID Not Found" });
-        }
-        const data = {
-          cart_id,
-          product_id,
-        };
-        updateCart(data)
-          .then((result) =>
-            commonHelper.response(res, result.rows, 200, "Update Cart Success")
-          )
-          .catch((err) => res.send(err));
-      } catch (error) {
-        console.log(error);
-      }
-    },
     deleteCart: async (req, res) => {
       try {
         const cart_id = String(req.params.id);
