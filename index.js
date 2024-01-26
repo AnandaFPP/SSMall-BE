@@ -12,7 +12,7 @@ const port = 3001
 app.use(express.json());
 app.use(morgan('dev'))
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'http://localhost:3001',
   methods: ['GET', 'POST', 'PUT', 'DELETE']
 }))
 app.use(helmet());
