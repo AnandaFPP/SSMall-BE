@@ -11,7 +11,7 @@ const port = 3001
 
 app.use(express.json());
 app.use(morgan('dev'))
-app.use(cors())
+app.use(cors()) 
 app.use(helmet());
 app.use(xss())
 app.use('/', mainRouter);
